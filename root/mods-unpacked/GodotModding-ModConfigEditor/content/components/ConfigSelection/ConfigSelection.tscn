@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/content/components/CurrentConfigSelect/CurrentConfigSelect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/assets/fonts/text.tres" type="DynamicFont" id=2]
+[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/content/components/ConfigSelection/ConfigSelection.gd" type="Script" id=3]
+
+[node name="ConfigSelection" type="HBoxContainer"]
+margin_top = 23.0
+margin_right = 460.0
+margin_bottom = 46.0
+script = ExtResource( 3 )
+
+[node name="CurrentConfigSelect" parent="." instance=ExtResource( 1 )]
+unique_name_in_owner = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 380.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+
+[node name="ButtonNewConfig" type="Button" parent="."]
+unique_name_in_owner = true
+margin_left = 384.0
+margin_right = 420.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 2 )
+text = " + "
+
+[node name="ButtonDeleteConfig" type="Button" parent="."]
+unique_name_in_owner = true
+margin_left = 424.0
+margin_right = 460.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 2 )
+text = " - "
+
+[connection signal="current_config_selected" from="CurrentConfigSelect" to="." method="_on_CurrentConfigSelect_current_config_selected"]
+[connection signal="pressed" from="ButtonNewConfig" to="." method="_on_ButtonNewConfig_pressed"]
+[connection signal="pressed" from="ButtonDeleteConfig" to="." method="_on_ButtonDeleteConfig_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/content/components/ConfigGroup/ConfigGroup.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/assets/fonts/text.tres" type="DynamicFont" id=2]
+
+[node name="ConfigGroup" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 37.0
+custom_constants/margin_top = 15
+custom_constants/margin_bottom = 5
+
+[node name="GroupName" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+margin_top = 15.0
+margin_right = 1024.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+margin_top = 41.0
+margin_right = 1024.0
+margin_bottom = 41.0
+custom_constants/margin_left = 10
+
+[node name="GroupComponents" type="VBoxContainer" parent="MarginContainer2"]
+unique_name_in_owner = true
+margin_left = 10.0
+margin_right = 1024.0

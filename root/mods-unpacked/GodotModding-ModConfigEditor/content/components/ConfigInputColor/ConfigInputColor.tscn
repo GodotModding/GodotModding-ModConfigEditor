@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/content/components/ConfigInputColor/ConfigInputColor.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/content/components/ConfigInput/ConfigInput.tscn" type="PackedScene" id=2]
+
+[node name="ConfigInputColor" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="InputMargin" index="0"]
+unique_name_in_owner = true
+margin_left = 15.0
+margin_right = 1020.0
+margin_bottom = 600.0
+
+[connection signal="color_changed" from="InputMargin/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
