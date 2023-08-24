@@ -4,4 +4,6 @@ This repository contains an example mod for the mod config feature introduced in
    
 For more details visit the [ModLoader-Documentation](https://github.com/GodotModding/godot-mod-loader/wiki)
 
-![image](https://github.com/GodotModding/GodotModding-UserProfileUI/assets/41547570/702c2a21-a8ed-46fe-9e01-6f1c2f83f8f3)
+![image](https://github.com/GodotModding/GodotModding-ModConfigEditor/assets/41547570/15047efd-5516-4075-9cf7-fe4ad9156d6e)
+![image](https://github.com/GodotModding/GodotModding-ModConfigEditor/assets/41547570/263d4de7-5a92-4759-a071-dc482e4561a6)
+
