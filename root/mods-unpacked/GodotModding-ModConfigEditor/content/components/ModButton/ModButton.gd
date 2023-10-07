@@ -3,7 +3,7 @@ extends Button
 
 signal mod_btn_pressed(mod_data)
 
-var mod_data: ModData setget _set_mod_data
+var mod_data: ModData: set = _set_mod_data
 
 
 func _set_mod_data(new_mod_data) -> void:

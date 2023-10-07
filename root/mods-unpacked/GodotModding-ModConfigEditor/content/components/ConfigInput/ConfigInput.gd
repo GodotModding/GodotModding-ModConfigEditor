@@ -6,10 +6,11 @@ signal value_changed(value, key)
 
 var parent: Dictionary
 var key: String
-var title: String setget _set_title
-var value setget _set_value
+var title: String: set = _set_title
+var value:
+	set = _set_value
 
-onready var title_label: Label = $"%TitleLabel"
+@onready var title_label: Label = $"%TitleLabel"
 
 
 func _set_title(new_title: String) -> void:

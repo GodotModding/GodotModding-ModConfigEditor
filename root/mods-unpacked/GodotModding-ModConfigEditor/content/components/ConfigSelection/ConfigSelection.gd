@@ -5,7 +5,7 @@ signal config_selected(config)
 signal add_config_pressed
 signal remove_config_pressed
 
-onready var current_config_select: ModConfigCurrentConfigSelect = $"%CurrentConfigSelect"
+@onready var current_config_select: ModConfigCurrentConfigSelect = $"%CurrentConfigSelect"
 
 
 func populate(mod_data: ModData) -> void:

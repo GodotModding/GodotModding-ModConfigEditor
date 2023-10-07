@@ -1,33 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://1n6ixcgymnai"]
 
-[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/content/components/ConfigGroup/ConfigGroup.gd" type="Script" id=1]
-[ext_resource path="res://mods-unpacked/GodotModding-ModConfig/assets/fonts/text.tres" type="DynamicFont" id=2]
+[ext_resource type="Script" path="res://mods-unpacked/GodotModding-ModConfig/content/components/ConfigGroup/ConfigGroup.gd" id="1_br6i5"]
+[ext_resource type="FontFile" path="res://mods-unpacked/GodotModding-ModConfig/assets/fonts/text.tres" id="2_stjkv"]
 
 [node name="ConfigGroup" type="VBoxContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource("1_br6i5")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 37.0
-custom_constants/margin_top = 15
-custom_constants/margin_bottom = 5
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 5
 
 [node name="GroupName" type="Label" parent="MarginContainer"]
 unique_name_in_owner = true
-margin_top = 15.0
-margin_right = 1024.0
-margin_bottom = 32.0
-custom_fonts/font = ExtResource( 2 )
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_stjkv")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-margin_top = 41.0
-margin_right = 1024.0
-margin_bottom = 41.0
-custom_constants/margin_left = 10
+layout_mode = 2
+theme_override_constants/margin_left = 10
 
 [node name="GroupComponents" type="VBoxContainer" parent="MarginContainer2"]
 unique_name_in_owner = true
-margin_left = 10.0
-margin_right = 1024.0
+layout_mode = 2

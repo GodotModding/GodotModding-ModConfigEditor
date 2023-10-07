@@ -1,23 +1,23 @@
-extends WindowDialog
+extends PanelContainer
 
 
-var mod_data: ModData setget _set_mod_data
-var selected_config: ModConfig setget _set_selected_config
+var mod_data: ModData: set = _set_mod_data
+var selected_config: ModConfig: set = _set_selected_config
 var edited_config: ModConfig
 
-export(String) var error_text_add_config := "ERROR: Creating new config - check logs"
-export(String) var error_text_remove_config := "ERROR: Deleting config - check logs"
-export(String) var error_text_update_config := "ERROR: Updating config - check logs"
-export(String) var info_default_config := "INFO: The default config cannot be modified. \n Please create a new config instead."
+@export var error_text_add_config := "ERROR: Creating new config - check logs"
+@export var error_text_remove_config := "ERROR: Deleting config - check logs"
+@export var error_text_update_config := "ERROR: Updating config - check logs"
+@export var info_default_config := "INFO: The default config cannot be modified. \n Please create a new config instead."
 
 const LABEL_CONFIG_FOR_TEXT := "Configs for"
 
-onready var label_config_for := $"%LabelConfigFor"
-onready var config_selection := $"%ConfigSelection"
-onready var config_sections := $"%ConfigSections"
-onready var popup_new_config := $"%PopupNewConfig"
-onready var info_text := $"%InfoText"
-onready var button_save: Button = $"%ButtonSave"
+@onready var label_config_for := $"%LabelConfigFor"
+@onready var config_selection := $"%ConfigSelection"
+@onready var config_sections := $"%ConfigSections"
+@onready var popup_new_config := $"%PopupNewConfig"
+@onready var info_text := $"%InfoText"
+@onready var button_save: Button = $"%ButtonSave"
 
 
 func _set_mod_data(new_mod_data: ModData) -> void:
@@ -52,12 +52,6 @@ func update_ui() -> void:
 
 func apply_config(config: ModConfig) -> void:
 	var material_settings: Dictionary = config.data.material_settings
-
-	material.set_shader_param("animate", material_settings.animate)
-	material.set_shader_param("square_scale", material_settings.square_scale)
-	material.set_shader_param("blur_amount", material_settings.blur_amount)
-	material.set_shader_param("mix_amount", material_settings.mix_amount)
-	material.set_shader_param("color_over", Color(material_settings.color))
 
 
 func _populate_config_sections() -> void:
@@ -115,7 +109,7 @@ func _on_PopupNewConfig_pressed_submit(config_name: String) -> void:
 
 
 func _on_ConfigSections_config_data_changed(input_component) -> void:
-	if input_component.parent.empty():
+	if input_component.parent.is_empty():
 		edited_config.data[input_component.key] = input_component.value
 		return
 

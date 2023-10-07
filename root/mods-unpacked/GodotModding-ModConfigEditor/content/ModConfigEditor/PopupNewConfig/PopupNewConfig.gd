@@ -1,9 +1,9 @@
-extends WindowDialog
+extends PanelContainer
 
 
 signal pressed_submit(config_name)
 
-onready var input_config_name = $"%InputConfigName"
+@onready var input_config_name = $"%InputConfigName"
 
 
 func _on_ButtonConfigNameSubmit_pressed():

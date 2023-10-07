@@ -2,10 +2,10 @@ class_name ModConfigGroup
 extends VBoxContainer
 
 
-var group_name: String setget _set_group_name
+var group_name: String: set = _set_group_name
 
-onready var label_group_name = $"%GroupName"
-onready var group_components = $"%GroupComponents"
+@onready var label_group_name = $"%GroupName"
+@onready var group_components = $"%GroupComponents"
 
 
 func _set_group_name(new_group_name: String) -> void:

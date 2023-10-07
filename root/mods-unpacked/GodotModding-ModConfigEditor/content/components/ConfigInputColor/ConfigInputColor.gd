@@ -2,7 +2,7 @@ class_name ModConfigInputColor
 extends ModConfigInput
 
 
-onready var color_picker_button: ColorPickerButton = $"%ColorPickerButton"
+@onready var color_picker_button: ColorPickerButton = $"%ColorPickerButton"
 
 
 func _set_value(new_value: String) -> void:

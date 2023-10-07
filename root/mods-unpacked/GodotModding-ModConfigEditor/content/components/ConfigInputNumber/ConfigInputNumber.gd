@@ -2,12 +2,12 @@ class_name ModConfigInputNumber
 extends ModConfigInput
 
 
-var step setget _set_step
-var max_value setget _set_max_value
-var min_value setget _set_min_value
+var step : set = _set_step
+var max_value : set = _set_max_value
+var min_value : set = _set_min_value
 
-onready var h_slider: HSlider = $"%HSlider"
-onready var spin_box: SpinBox = $"%SpinBox"
+@onready var h_slider: HSlider = $"%HSlider"
+@onready var spin_box: SpinBox = $"%SpinBox"
 
 
 func _ready() -> void:
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func _set_value(new_value) -> void:
-	._set_value(new_value)
+	super._set_value(new_value)
 	spin_box.value = new_value
 
 

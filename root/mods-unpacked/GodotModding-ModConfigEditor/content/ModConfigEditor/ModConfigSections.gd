@@ -3,11 +3,11 @@ extends VBoxContainer
 
 signal config_data_changed(input_component)
 
-export(PackedScene) var group_component_scene: PackedScene
-export(PackedScene) var string_input_component_scene: PackedScene
-export(PackedScene) var color_input_component_scene: PackedScene
-export(PackedScene) var number_input_component_scene: PackedScene
-export(PackedScene) var boolean_input_component_scene: PackedScene
+@export var group_component_scene: PackedScene
+@export var string_input_component_scene: PackedScene
+@export var color_input_component_scene: PackedScene
+@export var number_input_component_scene: PackedScene
+@export var boolean_input_component_scene: PackedScene
 
 var config: ModConfig
 
@@ -107,8 +107,8 @@ func _add_boolean_input(key: String, parent_data: Dictionary, title: String, val
 
 
 func _add_component(component_scene: PackedScene, parent_node: Node) -> Node:
-	var component: Node = component_scene.instance()
-	component.connect("value_changed", self, "_on_ConfigInput_value_changed")
+	var component: Node = component_scene.instantiate()
+	component.connect("value_changed", Callable(self, "_on_ConfigInput_value_changed"))
 
 	if parent_node:
 		parent_node.add_component(component)
